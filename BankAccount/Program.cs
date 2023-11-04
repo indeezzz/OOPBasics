@@ -1,2 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+п»ї// See https://aka.ms/new-console-template for more information
+using BankAccount;
+
+Account account = new Account(AccountType.BankAccountType.DepositAccount);
+Console.ReadKey();
