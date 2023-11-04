@@ -38,22 +38,40 @@ namespace BankAccount
         {
             AccountType = bankAccountTypes;
         }
-        public void Withdraw(Account account, decimal amount)
+        private bool validAmount (decimal amount)
         {
-            if (account.Balance >= amount)
+            return amount <= Balance ? true : false;
+        }
+        public void Withdraw(decimal amount)
+        {
+            if (validAmount(amount))
             {
-                Console.WriteLine($"{account.AccountNumber} с данного счета была снята сумма {amount}. Остаток на счету: {account.Balance}");
+                Console.WriteLine($"{AccountNumber} с данного счета была снята сумма {amount}. Остаток на счету: {Balance}");
             }
             else
             {
-                throw new Exception($"{account.AccountNumber} на данном счету не достаточно средств");
+                Console.WriteLine($"{AccountNumber} на данном счету не достаточно средств");
             }
 
         }
-        public void Deposit(Account account, decimal amount)
+        public void Deposit(decimal amount)
         {
-            account.Balance += amount;
-            Console.WriteLine($"{account.AccountNumber} по данному счету произошло пополнение средств на сумму {amount}");
+            Balance += amount;
+            Console.WriteLine($"{AccountNumber} по данному счету произошло пополнение средств на сумму {amount}");
+        }
+
+        public void TransferTo(Account account, decimal amount)
+        {
+            if(validAmount(amount))
+            {
+                Balance -= amount;
+                account.Balance += amount;
+                Console.WriteLine($"Перевод средств на номер счета {account.AccountNumber} успешен.");
+            }
+            else
+            {
+                Console.WriteLine($"{AccountNumber} на данном счету не достаточно средств для перевода");
+            }
         }
     }
 }
