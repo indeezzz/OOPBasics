@@ -8,7 +8,8 @@ namespace BankAccount
 {
     interface IOperationAccount
     {
-        void Deposit(Account account, decimal amount);
-        void Withdraw(Account account, decimal amount);
+        void Deposit(decimal amount);
+        void Withdraw(decimal amount);
+        void TransferTo(Account account, decimal amount);
     }
 }
