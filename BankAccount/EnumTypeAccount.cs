@@ -16,16 +16,16 @@ namespace BankAccount
 			switch (bankAcconutType)
 			{
 				case BankAccountType.CheckingAccount: 
-					return $"Расчетный счет"; 
+					return $"Р Р°СЃС‡РµС‚РЅС‹Р№ СЃС‡РµС‚"; 
 				case BankAccountType.CurrentAccount: 
-					return $"Текуший счет";
+					return $"РўРµРєСѓС€РёР№ СЃС‡РµС‚";
 				case BankAccountType.CreditAccount:
-					return $"Кредитный счет";
+					return $"РљСЂРµРґРёС‚РЅС‹Р№ СЃС‡РµС‚";
 				case BankAccountType.DepositAccount:
-					return $"Депозитный счет";
+					return $"Р”РµРїРѕР·РёС‚РЅС‹Р№ СЃС‡РµС‚";
 				case BankAccountType.BudgetAccount:
-					return $"Бюджетный счет";
-				default: return $"Неизвестный счет";
+					return $"Р‘СЋРґР¶РµС‚РЅС‹Р№ СЃС‡РµС‚";
+				default: return $"РќРµРёР·РІРµСЃС‚РЅС‹Р№ СЃС‡РµС‚";
 			}
 		}
 	}

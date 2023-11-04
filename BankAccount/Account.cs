@@ -16,7 +16,7 @@ namespace BankAccount
             {
                 if(value < 0)
                 {
-                    throw new ArgumentException(String.Format("Установленный баланс:{0}. Баланс не может быть отрицательным", value));
+                    throw new ArgumentException(String.Format("РЈСЃС‚Р°РЅРѕРІР»РµРЅРЅС‹Р№ Р±Р°Р»Р°РЅСЃ:{0}. Р‘Р°Р»Р°РЅСЃ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅС‹Рј", value));
                 }
                 _balance = value;
             }
@@ -42,18 +42,18 @@ namespace BankAccount
         {
             if (account.Balance >= amount)
             {
-                Console.WriteLine($"{account.AccountNumber} с данного счета была снята сумма {amount}. Остаток на счету: {account.Balance}");
+                Console.WriteLine($"{account.AccountNumber} СЃ РґР°РЅРЅРѕРіРѕ СЃС‡РµС‚Р° Р±С‹Р»Р° СЃРЅСЏС‚Р° СЃСѓРјРјР° {amount}. РћСЃС‚Р°С‚РѕРє РЅР° СЃС‡РµС‚Сѓ: {account.Balance}");
             }
             else
             {
-                throw new Exception($"{account.AccountNumber} на данном счету не достаточно средств");
+                throw new Exception($"{account.AccountNumber} РЅР° РґР°РЅРЅРѕРј СЃС‡РµС‚Сѓ РЅРµ РґРѕСЃС‚Р°С‚РѕС‡РЅРѕ СЃСЂРµРґСЃС‚РІ");
             }
 
         }
         public void Deposit(Account account, decimal amount)
         {
             account.Balance += amount;
-            Console.WriteLine($"{account.AccountNumber} по данному счету произошло пополнение средств на сумму {amount}");
+            Console.WriteLine($"{account.AccountNumber} РїРѕ РґР°РЅРЅРѕРјСѓ СЃС‡РµС‚Сѓ РїСЂРѕРёР·РѕС€Р»Рѕ РїРѕРїРѕР»РЅРµРЅРёРµ СЃСЂРµРґСЃС‚РІ РЅР° СЃСѓРјРјСѓ {amount}");
         }
     }
 }
