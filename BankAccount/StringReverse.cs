@@ -1,10 +1,11 @@
 п»їnamespace BankAccount
 {
-    internal class StringLibrary
+    internal class StringLibrary : IDisposable
     {
         private string? _reverseString;
         private int _length;
-
+        private static readonly string _pathForRead = "C:\\Users\\indee\\source\\repos\\BankAccount\\BankAccount\\address.txt";
+        private static readonly string _pathForWrite = "C:\\Users\\indee\\source\\repos\\BankAccount\\BankAccount\\email.txt";
         public string? ReverseString
         {
             get { return _reverseString; }
@@ -14,12 +15,78 @@
                 {
                     _reverseString = value;
                     StringLength = _reverseString.Length - 1;
-                } 
+                }
                 else
                 {
                     _reverseString = null;
                 }
             }
+        }
+        public void SearchMail(ref string value)
+        {
+            var str_value = value.Split(" ");
+            value = "";
+            foreach (var item in str_value)
+            {
+                if (item.Contains("@"))
+                {
+                    value += $"{item} ";
+                }
+            }
+            Console.WriteLine($"РЎС‚СЂРѕРєР° РІ РјРµС‚РѕРґРµ: {value}");
+        }
+        public void setStringInFile(string value)
+        {
+            var str_value = value.Split(" ");
+            try
+            {
+                StreamWriter sw = new StreamWriter(_pathForWrite);
+                foreach (var item in str_value)
+                {
+                    if (item.Contains("@"))
+                    {
+                        sw.WriteLine(item);
+                    }
+                }
+                sw.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception: " + e.Message);
+            }
+            finally
+            {
+                Dispose();
+            }           
+        }
+
+        public string getStringFromFile()
+        {
+            String? line;
+            string newline = "";
+            try
+            {
+                StreamReader sr = new StreamReader(_pathForRead);
+                line = sr.ReadLine();
+                newline += line;
+
+                while (line != null)
+                {
+                    line = sr.ReadLine();
+                    newline += line;
+                }
+                sr.Close();
+                return newline;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception: " + e.Message);
+            }
+            finally
+            {
+                Dispose();
+            }
+            return null!;
         }
         public void PrintString(string str)
         {
@@ -32,7 +99,7 @@
         }
         public string? returnReverseString()
         {
-            if(ReverseString is not null)
+            if (ReverseString is not null)
             {
                 char[] chars = ReverseString.ToCharArray();
                 for (int i = 0; i < StringLength; i++)
@@ -45,7 +112,10 @@
             }
             return null;
         }
+        public void Dispose()
+        {
 
+        }
         public StringLibrary()
         {
 
