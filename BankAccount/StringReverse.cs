@@ -4,8 +4,8 @@
     {
         private string? _reverseString;
         private int _length;
-        private static readonly string _pathForRead = "C:\\Users\\indee\\source\\repos\\BankAccount\\BankAccount\\address.txt";
-        private static readonly string _pathForWrite = "C:\\Users\\indee\\source\\repos\\BankAccount\\BankAccount\\email.txt";
+        private readonly string _pathForRead = "C:\\Users\\indee\\source\\repos\\BankAccount\\BankAccount\\address.txt";
+        private readonly string _pathForWrite = "C:\\Users\\indee\\source\\repos\\BankAccount\\BankAccount\\email.txt";
         public string? ReverseString
         {
             get { return _reverseString; }
