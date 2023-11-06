@@ -37,17 +37,11 @@
         }
         public void setStringInFile(string value)
         {
-            var str_value = value.Split(" ");
             try
             {
                 StreamWriter sw = new StreamWriter(_pathForWrite);
-                foreach (var item in str_value)
-                {
-                    if (item.Contains("@"))
-                    {
-                        sw.WriteLine(item);
-                    }
-                }
+                SearchMail(ref value);
+                sw.WriteLine(value);
                 sw.Close();
             }
             catch (Exception e)
