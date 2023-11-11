@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbstractFactory", "BankAccount\AbstractFactory.csproj", "{8C5AE506-E134-4849-A0A7-D3B64BC2588E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassFabricCreateBuild", "ClassFabricCreateBuild\ClassFabricCreateBuild.csproj", "{81204FDF-1542-4467-AA35-677CD324ACFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8C5AE506-E134-4849-A0A7-D3B64BC2588E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C5AE506-E134-4849-A0A7-D3B64BC2588E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C5AE506-E134-4849-A0A7-D3B64BC2588E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81204FDF-1542-4467-AA35-677CD324ACFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81204FDF-1542-4467-AA35-677CD324ACFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81204FDF-1542-4467-AA35-677CD324ACFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81204FDF-1542-4467-AA35-677CD324ACFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

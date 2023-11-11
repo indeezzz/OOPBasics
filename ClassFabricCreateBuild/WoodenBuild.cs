@@ -4,14 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AbstractFactory
+namespace ClassFabricCreateBuild
 {
     public class WoodenBuild : Build
     {
         protected override string TypeBuild => "Деревянный дом";
-        public void Init()
-        {
-
-        }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AbstractFactory
+namespace ClassFabricCreateBuild
 {
     public abstract class Build
     {
@@ -20,6 +20,11 @@ namespace AbstractFactory
         public int NumberOfFloors { get { return _numberOfFloors;} set { _numberOfFloors = value; } }
         public int NumberOfApartments { get { return _numberOfApartments; } set { _numberOfApartments = value; } }
         public int Entrances { get { return _entrances; } set { _entrances = value; } }
+
+        public virtual void Init()
+        {
+            Console.WriteLine(TypeBuild);
+        }
 
     }
 }

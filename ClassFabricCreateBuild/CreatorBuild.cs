@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AbstractFactory
+namespace ClassFabricCreateBuild
 {
-    public abstract class CreatorBuild : Creator
+    public class CreatorBuild : Creator
     {
         public override WoodenBuild CreateWoodenBuild()         
         {
@@ -21,7 +21,10 @@ namespace AbstractFactory
 
         public override PanelBuild CreatePanelBuild()
         {
-            var builder = new PanelBuild();
+            var builder = new PanelBuild() 
+            { 
+
+            };
             return builder;
         }
     }
