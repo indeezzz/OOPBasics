@@ -13,5 +13,7 @@ namespace ClassFabricCreateBuild
         public abstract BrickBuild CreateBrickBuild();
 
         public abstract PanelBuild CreatePanelBuild();
+
+        
     }
 }

@@ -9,5 +9,10 @@ namespace ClassFabricCreateBuild
     public class WoodenBuild : Build
     {
         protected override string TypeBuild => "Деревянный дом";
+
+        public WoodenBuild() : base()
+        {
+
+        }
     }
 }

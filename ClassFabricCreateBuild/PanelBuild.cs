@@ -9,5 +9,9 @@ namespace ClassFabricCreateBuild
     public class PanelBuild : Build
     {
         protected override string TypeBuild => "Панельный дом";
+        public PanelBuild() : base()
+        {
+
+        }
     }
 }
